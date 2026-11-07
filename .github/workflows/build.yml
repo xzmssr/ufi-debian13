@@ -96,7 +96,7 @@ jobs:
             binutils-aarch64-linux-gnu \
             gcc-arm-none-eabi binutils-arm-none-eabi \
             kmod cpio rsync xz-utils zstd device-tree-compiler u-boot-tools \
-            debootstrap qemu-user-static binfmt-support \
+            debootstrap qemu-user-binfmt binfmt-support \
             e2fsprogs dosfstools util-linux parted \
             dwarves libelf-dev \
             python3 git curl ca-certificates ccache
