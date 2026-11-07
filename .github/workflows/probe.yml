@@ -41,7 +41,7 @@ jobs:
         run: |
           sudo apt-get -o Acquire::Retries=5 update
           sudo apt-get -o Acquire::Retries=5 install -y --no-install-recommends \
-            device-tree-compiler python3 debootstrap qemu-user-static \
+            device-tree-compiler python3 debootstrap qemu-user-binfmt \
             binfmt-support curl ca-certificates git
           sudo update-binfmts --enable qemu-aarch64 2>/dev/null || true
 
