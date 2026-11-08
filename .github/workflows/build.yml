@@ -316,7 +316,7 @@ jobs:
             --components=main,contrib,non-free-firmware \
             --include=ca-certificates,locales,tzdata \
             trixie rootfs http://deb.debian.org/debian
-          sudo cp -a /usr/bin/qemu-aarch64-static rootfs/usr/bin/
+          sudo cp -a /usr/bin/qemu-aarch64-binfmt rootfs/usr/bin/
           sudo chroot rootfs /debootstrap/debootstrap --second-stage
 
       - name: 安装软件包与内核模块
@@ -466,7 +466,7 @@ jobs:
           printf 'ALGO=lz4\nPERCENT=60\nPRIORITY=100\n' | sudo tee rootfs/etc/default/zramswap >/dev/null
 
           # --- 收尾清理 ---
-          sudo rm -f rootfs/usr/bin/qemu-aarch64-static
+          sudo rm -f rootfs/usr/bin/qemu-aarch64-binfmt
           sudo rm -rf rootfs/var/lib/apt/lists/*
           sudo rm -rf rootfs/var/cache/apt/archives/*.deb
           sudo rm -rf rootfs/usr/share/doc/* rootfs/usr/share/man/* rootfs/usr/share/info/* 2>/dev/null || true
